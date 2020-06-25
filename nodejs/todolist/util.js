@@ -1,22 +1,9 @@
-/*
-    Create function that receives params
-    create a log file with the content
-    if file does not exist, create file
-    else add added content in new line
-    add log, date and time when added
-    call within App.js
-*/
+const fs = require('fs')
+const logFileName = 'log.txt'
 
-function logCreator(content){
-    let timeStamp = new Date();
-    const fs = require('fs');
-    const fileName = "./log.txt";
-
-    if (fs.existsSync(fileName)) {
-        fs.appendFileSync(fileName, `${ timeStamp } | ${ content }\n`);
-    } else {
-        fs.writeFileSync(fileName, `${ timeStamp } | ${ content }\n`);
-    }
+const log = (content) => {
+    const currentDate = new Date()
+    fs.appendFileSync(logFileName, `${currentDate} -> ${content}\n`)
 }
 
-module.exports = logCreator;
+module.exports = log

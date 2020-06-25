@@ -1,11 +1,24 @@
-// importing a variable from module
-const sillyFunction = require('./Module.js');
-const logCreator = require('./util.js');
+const chalk = require('chalk');
+const yargs = require('yargs');
 
-// creating first name variable
-const name = "Rodrigo";
+yargs.version('1.0.1');
 
-const result = sillyFunction(10,2);
-
-// joining name and surname
-console.log(result);
+yards.command({
+    command: 'add',
+    describe: 'Adding new task in todo list',
+    builder: {
+        name: {
+            describe: 'Task name',
+            demandOption: true,
+            type: 'string'
+        },
+        description: {
+            describe: 'Task description',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function ( argv ){
+        const info = chalk.green.bold.inverse('Creating new task: ');
+    }
+})
