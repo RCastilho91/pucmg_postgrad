@@ -32,13 +32,13 @@ yargs.command({
     describe: 'Remove a task from the ToDo list',
     builder: {
         name: {
-            describe: 'Taks name to be deleted',
+            describe: 'tasks name to be deleted',
             demandOption: true,
             type: 'string'
         }
     },
     handler: (argv) => {
-        console.log(chalk.red('Removing a existing task'))
+        console.log(chalk.red('Removing an existing task'))
         task.removeTask(argv.name)
     }
 })
@@ -59,7 +59,7 @@ yargs.command({
     describe: 'Read a task from the ToDo list',
     builder: {
         name: {
-            describe: 'taks to find',
+            describe: 'tasks to find',
             demandOption: true,
             type: 'string'
         }
@@ -76,7 +76,7 @@ yargs.command({
     describe: 'Update a task',
     builder: {
         name: {
-            describe: 'taks to find',
+            describe: 'tasks to find',
             demandOption: true,
             type: 'string'
         },
@@ -87,8 +87,8 @@ yargs.command({
         }
     },
     handler: (argv) => {
-        console.log(chalk.white.bold.inverse('Updating a taks'))
-        task.updateTaks(argv.name, argv.status)
+        console.log(chalk.white.bold.inverse('Updating a tasks'))
+        task.updatetasks(argv.name, argv.status)
 
     }
 })

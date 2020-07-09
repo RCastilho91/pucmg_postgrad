@@ -7,7 +7,7 @@ const addTask = (name, description) => {
 
     const tasks = loadAllTasks()
 
-    const duplicatedTask = tasks.find((taks) => taks.name === name)
+    const duplicatedTask = tasks.find((tasks) => tasks.name === name)
 
     if(!duplicatedTask){
         const newTask = {
@@ -46,24 +46,24 @@ const removeTask = (name) => {
 
     saveTasks(tasksToKeep)
 
-    console.log(chalk.green.bold(`Taks with name [${name}] has been removed!`))
+    console.log(chalk.green.bold(`tasks with name [${name}] has been removed!`))
 
 }
 
 const findTask = (name) => {
     const tasks = loadAllTasks()
 
-    const taksFound = tasks.find((task) => task.name === name)
+    const tasksFound = tasks.find((task) => task.name === name)
 
-    if(taksFound !== undefined){
-        return taksFound
+    if(tasksFound !== undefined){
+        return tasksFound
     }else{
         return {}
     }
 
 }
 
-const updateTaks = (name, status) => {
+const updatetasks = (name, status) => {
     const tasks = loadAllTasks()
 
     tasks.find((task) => {
@@ -74,7 +74,7 @@ const updateTaks = (name, status) => {
 
     saveTasks(tasks)
 
-    console.log(chalk.green.bold(`Taks status with name [${name}] has been updated!`))
+    console.log(chalk.green.bold(`tasks status with name [${name}] has been updated!`))
 
 }
 
@@ -83,5 +83,5 @@ module.exports = {
     removeTask,
     loadAllTasks,
     findTask,
-    updateTaks
+    updatetasks
 }
